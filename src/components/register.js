@@ -16,6 +16,18 @@ class Register extends Component {
     e.preventDefault();
     const { username, password, img } = this.state;
     console.log(username, password, img);
+    fetch("http://localhost:3001/register", {
+      method: "POST",
+      body: JSON.stringify({
+        username,
+        password,
+        img,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+      });
   }
 
   render(){
