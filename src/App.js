@@ -8,20 +8,14 @@ import Navbar from './components/Navbar.js';
 
 
 const App = () => {
-  // const[posts, setPosts] = useState([]);
-  // console.log(posts)
-  
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3001/posts/all").then((response) => {
-  //     setPosts(response.data)
-  //   })
-  // }, [])
 
   return (
   <Router>
   <Navbar />
   <Routes>
+
     <Route path='/posts/all' element={<Home />} />
+
     {/* <Route path='/users/login' element={<Login />} />
     <Route path='/users/register' element={<Register />} /> */}
   </Routes>

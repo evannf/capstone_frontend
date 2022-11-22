@@ -4,13 +4,15 @@ import Axios from 'axios';
 
 const Home = () => {
   const[posts, setPosts] = useState([]);
-  console.log(posts)
+
   
   useEffect(() => {
     Axios.get("http://localhost:3001/posts/all").then((response) => {
-      setPosts(response.data)
+      setPosts(response.data.posts)
+      console.log(response)
     })
   }, [])
+
 
   return (
     <div className='App'>
