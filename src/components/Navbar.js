@@ -1,17 +1,19 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
 import "../styles/navbar.css";
-import React, { useEffect, useState } from 'react';
-import {Link, useLocation} from 'react-router-dom';
 
-function navbar() {
+
+function Navbar() {
   return (
     <div className='navbar'> 
         <div className='links'>
             <Link to='/posts/all'>Home</Link>
-            <Link to='/users/login'>Login</Link>
-            <Link to='/users/register'>Register</Link>
+            <Link to='/users/:id'>Profile</Link>
+            <Link to='/users/:id/edit'>Edit Profile</Link>
+            <Link to='users/login'>Logout</Link>
         </div>
     </div>
   )
 }
 
-export default navbar
+export default Navbar
