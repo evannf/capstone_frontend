@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../styles/register.css";
 import meat from "../images/beef-supreme.png"
 
-class Login extends Component {
-  // constructor(props){
-  // super(props)}
-  render() {
-    return (
+function Login() {
+  
+  return (
     <div className='body'>
     <div className='formContainer'>
 
@@ -18,14 +16,14 @@ class Login extends Component {
       </div>
 
           <div>
-            <h1>Join The MEAT-Up!</h1>
+            <h1>Welcome back to the MEAT-Up!</h1>
               <div>
                 <label> Username: </label>
                   <input 
                     type="text"
                     placeholder='username' 
                     className='username'
-                    onChange={(e) => this.setState({ username: e.target.value })}
+
                   />
               </div>
 
@@ -35,22 +33,22 @@ class Login extends Component {
                     type="text" 
                     placeholder='password'
                     className='password'
-                    onChange={(e) => this.setState({ password: e.target.value })}
+
                   />
               </div>
 
             <button
               type='submit' 
               className='registerButton' 
-              onClick={this.handleSubmit}
+              // onClick={handleSubmit}
             >
-            Register
+            Log In
             
             </button> 
           
         </div>
         <br />
-        Already a Member? <a href='/login'>Sign In Here!</a>
+        Not a Member? <a href='/users/register'>Sign Up Here!</a>
       </div>
 
 
@@ -58,6 +56,6 @@ class Login extends Component {
     </div>
   )
 }
-}
+
 
 export default Login

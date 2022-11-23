@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import Axios from 'axios';
+import Navbar from '../components/Navbar.js';
 
 const Home = () => {
   const[posts, setPosts] = useState([]);
@@ -16,6 +17,7 @@ const Home = () => {
 
   return (
     <div className='App'>
+    <Navbar />
       <div className='Posts'>
           {posts.map((post) => {
             return <div>

@@ -10,7 +10,7 @@ function Navbar() {
             <Link to='/posts/all'>Home</Link>
             <Link to='/users/:id'>Profile</Link>
             <Link to='/users/:id/edit'>Edit Profile</Link>
-            <Link to='users/login'>Logout</Link>
+            <Link to='/users/register'>Logout</Link>
         </div>
     </div>
   )

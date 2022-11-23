@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useRef } from 'react';
 import "../styles/register.css";
-import meat from "../images/beef-supreme.png"
+import meat from "../images/beef-supreme.png";
+import axios from 'axios';
 
 
-class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      img: ""
-    };
-    //use of bind() necessary to make 'this' work in the callback
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+function Register() {
+  const { username, password, img } = useRef();
   
-  handleSubmit(e) {
+  const handleSubmit = async (e)  => {
     e.preventDefault();
-    const { username, password, img } = this.state;
+    const newUser = { 
+      username: username.current.value,
+      password: password.current.value,
+      img: img.current.value,
+    };
     console.log(username, password, img);
-    fetch("http://localhost:3001/register", {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        password,
-        img,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userRegister");
-      });
-  }
 
-  render(){
+    try{
+      await axios.post("/users/register", newUser);
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+
   return (
     <div className='body'>
     <div className='formContainer'>
@@ -53,7 +44,7 @@ class Register extends Component {
                     type="text"
                     placeholder='username' 
                     className='username'
-                    onChange={(e) => this.setState({ username: e.target.value })}
+                    ref={username}
                   />
               </div>
 
@@ -63,14 +54,14 @@ class Register extends Component {
                     type="text" 
                     placeholder='password'
                     className='password'
-                    onChange={(e) => this.setState({ password: e.target.value })}
+                    ref={password}
                   />
               </div>
 
             <button
               type='submit' 
               className='registerButton' 
-              onClick={this.handleSubmit}
+              onClick={handleSubmit}
             >
             Register
             
@@ -78,7 +69,7 @@ class Register extends Component {
           
         </div>
         <br />
-        Already a Member? <a href='/login'>Sign In Here!</a>
+        Already a Member? <a href='/users/login'>Sign In Here!</a>
       </div>
 
 
@@ -86,6 +77,6 @@ class Register extends Component {
     </div>
   )
 }
-}
+
 
 export default Register
