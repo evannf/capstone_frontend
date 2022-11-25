@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useRef } from 'react';
 import "../styles/register.css";
 import meat from "../images/beef-supreme.png";
@@ -6,16 +6,16 @@ import axios from 'axios';
 
 
 function Register() {
-  const { username, password, img } = useRef();
+  const username = useRef();
+  const password = useRef();
   
   const handleSubmit = async (e)  => {
     e.preventDefault();
     const newUser = { 
       username: username.current.value,
       password: password.current.value,
-      img: img.current.value,
     };
-    console.log(username, password, img);
+    console.log(username, password);
 
     try{
       await axios.post("/users/register", newUser);

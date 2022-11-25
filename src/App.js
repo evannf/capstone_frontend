@@ -1,58 +1,29 @@
 import Home from './pages/home.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./pages/login.js";
-// import Navbar from './components/Navbar.js';
+import Profile from "./pages/profile.js";
 import Register from './pages/register.js';
-// import { useState, useEffect } from "react";
-// import Axios from 'axios';
 
 
 const App = () => {
 
   return (
+
   <Router>
-  {/* <Navbar /> */}
-  <Routes>
+    <Home />
+ 
+    <Routes>
 
-    <Route path='/posts/all' element={<Home />} />
+      <Route path='/posts/all' element={<Home />} />
+      <Route path='/user/:id' element={<Profile />} />
+      <Route path='/users/login' element={<Login />} />
+      <Route path='/users/register' element={<Register />} />
 
-    <Route path='/users/login' element={<Login />} />
-    <Route path='/users/register' element={<Register />} />
-  </Routes>
-  {/* <Header />
-  <Home /> */}
+    </Routes>
   </Router>
   );
 }
 
 
-//   return (
-//     <div className='App'>
-//       <div className='Posts'>
-//           {posts.map((post) => {
-//             return <div>
-//               <h1>Username: {post.username}</h1>
-//               <h3>{post.body}</h3>
-//             </div>
-//           })}
-//       </div>
-//     </div>
-//   )
-// }
-
-// function App() {
-//   return (
-//   <Router>
-//   <Navbar />
-//   <Routes>
-//     <Route path='/posts/all' element={<Home />} />
-//     <Route path='/users/login' element={<Login />} />
-//     <Route path='/users/register' element={<Register />} />
-//   </Routes>
-//   {/* <Header />
-//   <Home /> */}
-//   </Router>
-//   );
-// }
 
 export default App;
