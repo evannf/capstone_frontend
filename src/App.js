@@ -5,10 +5,11 @@ import Profile from "./pages/profile.js";
 import Register from './pages/register.js';
 
 
+
 const App = () => {
 
   return (
-
+  <>
   <Router>
     <Home />
  
@@ -21,6 +22,7 @@ const App = () => {
 
     </Routes>
   </Router>
+  </>
   );
 }
 

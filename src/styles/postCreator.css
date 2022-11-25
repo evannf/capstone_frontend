@@ -1,0 +1,9 @@
+.createPost{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.postInput{
+    width: 600px;
+}

@@ -1,0 +1,25 @@
+.post{
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.postContainer{
+    padding: 10px;
+}
+
+.postHeader{
+    display: flex;
+    align-items: center;
+}
+
+.profilePic{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 100px;
+    font-weight: 800;
+}
