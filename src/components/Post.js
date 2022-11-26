@@ -1,16 +1,22 @@
 import React from 'react';
 import "../styles/post.css";
+import { Users } from "../mockData.js"
 
 function Post({ post }) {
-    console.log(post)
+
   return (
     <div className='post'>
         <div className='postContainer'>
             <div className='postHeader'>
-                <img className='profilePic' src={post.profilePic} alt='profile' />
+
+                <img className='profilePic'
+                    src={Users.filter((user) => user.id === post.userId)[0].profilePic}
+                    alt='profile' />
+
                 <span className='username'>
                     {post.username}
                 </span>
+
             </div>
             <div className='postBody'>
                 <span className='text'>

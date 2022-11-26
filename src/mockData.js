@@ -9,7 +9,7 @@ export const Users = [
     {
         id: 2,
         username: "Danny Fillet",
-        profilePic: "assets/beef-supreme.png",
+        profilePic: "assets/danny-meatballs.jpeg",
         bio: "Best mate to Beef Supreme"
     }
 ]
@@ -19,7 +19,6 @@ export const Posts = [
         id: 1,
         userId: 1,
         username: "Beef Supreme",
-        profilePic: "assets/beef-supreme.png",
         body: "Weclome to the meat locker!",
         likes: 12
 
@@ -28,8 +27,7 @@ export const Posts = [
     {
         id: 2,
         userId: 2,
-        username: "Danny Fillet",
-        profilePic: "assets/beef-supreme.png",
+        username: "Danny Meatballs",
         body: "This place is the jam!",
         likes: 1
 
