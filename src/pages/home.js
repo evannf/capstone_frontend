@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     Axios.get("http://localhost:3001/posts/all").then((response) => {
       setPosts(response.data.posts)
-      console.log(response)
+      // console.log(response)
     })
   }, [])
 

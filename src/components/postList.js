@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/postList.css";
 import PostCreator from "./postCreator";
 import Post from "./Post";
+import { Posts } from "../mockData.js";
 
 function PostList() {
     
@@ -10,9 +11,10 @@ function PostList() {
     <>
     <PostCreator />
     <div className="posts">
-        <Post />
-        <Post />
-        <Post />
+        {Posts.map((post) => (
+            <Post key={ post.id } post = { post }/>
+        ))}
+       
     </div>
     </>
   )

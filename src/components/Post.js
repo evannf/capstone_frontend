@@ -1,24 +1,27 @@
 import React from 'react';
 import "../styles/post.css";
 
-function Post() {
+function Post({ post }) {
+    console.log(post)
   return (
     <div className='post'>
         <div className='postContainer'>
             <div className='postHeader'>
-                <img className='profilePic' src='/assets/beef-supreme.png' alt='profile' />
-                <span className='username'>Username</span>
+                <img className='profilePic' src={post.profilePic} alt='profile' />
+                <span className='username'>
+                    {post.username}
+                </span>
             </div>
             <div className='postBody'>
                 <span className='text'>
-                    Mock Post 🥩
+                    {post.body}
                 </span>
                 <img className='postImg' src='/assets/beef-supreme.png' alt='postPic'/>
             </div>
-            <div classname='postInteract'>
+            <div className='postInteract'>
                 <div className='likes'>
                     <img className='likeButton' src='assets/like-button2.png' alt='like' />
-                    <span className='likeNumber'> 12 Likes </span>
+                    <span className='likeNumber'> {post.likes} </span>
                 </div>
             </div>
         </div>

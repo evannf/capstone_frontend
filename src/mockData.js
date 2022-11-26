@@ -1,4 +1,4 @@
-const Users = [
+export const Users = [
     {
         id: 1,
         username: "Beef Supreme",
@@ -14,12 +14,12 @@ const Users = [
     }
 ]
 
-const Posts = [
+export const Posts = [
     {
         id: 1,
         userId: 1,
         username: "Beef Supreme",
-        profilePic: "assets/beef-supreme",
+        profilePic: "assets/beef-supreme.png",
         body: "Weclome to the meat locker!",
         likes: 12
 
@@ -29,9 +29,9 @@ const Posts = [
         id: 2,
         userId: 2,
         username: "Danny Fillet",
-        profilePic: "assets/beef-supreme",
+        profilePic: "assets/beef-supreme.png",
         body: "This place is the jam!",
-        likes: 12
+        likes: 1
 
     }
 ]
