@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import Axios from 'axios';
 import Navbar from '../components/Navbar.js';
 import "../styles/home.css";
-import PostCreator from '../components/PostCreator.js';
-import Post from '../components/Post.js';
+import PostList from '../components/PostList.js';
 
 const Home = () => {
   const[posts, setPosts] = useState([]);
@@ -21,8 +20,8 @@ const Home = () => {
   return (
     <div className='home'>
     <Navbar />
-    <PostCreator />
-    <Post />
+    <PostList />
+
       <div className='Posts'>
           {posts.map((post) => {
             return <div>

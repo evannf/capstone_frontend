@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/postList.css";
-import Navbar from "./Navbar";
-import PostCreator from './components/PostCreator.js';
+import PostCreator from "./postCreator";
 import Post from "./Post";
 
 function PostList() {
@@ -9,19 +8,11 @@ function PostList() {
 
   return (
     <>
-    <Navbar />
-    {/* <PostCreator /> */}
-    <Post />
+    <PostCreator />
     <div className="posts">
-        <div className="postHeader">
-            <img className="profilePic" src='/assets/beef-supreme.png' alt='profile' />
-        </div>
-        <div className="postBody">
-
-        </div>
-        <div className="like">
-            <img className="likeButton" alt="like" src="/assets/like-button.jpeg" />
-        </div>
+        <Post />
+        <Post />
+        <Post />
     </div>
     </>
   )

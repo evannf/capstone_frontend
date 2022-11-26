@@ -17,7 +17,7 @@ function Post() {
             </div>
             <div classname='postInteract'>
                 <div className='likes'>
-                    <img className='likeIcon' src='assets/like-button2.png' alt='like' />
+                    <img className='likeButton' src='assets/like-button2.png' alt='like' />
                     <span className='likeNumber'> 12 Likes </span>
                 </div>
             </div>
