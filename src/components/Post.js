@@ -1,9 +1,14 @@
-import React from 'react';
+import { useState } from 'react';
 import "../styles/post.css";
 import { Users } from "../mockData.js"
 
 function Post({ post }) {
-
+    const [likes, setLikes] = useState(post.likes);
+    const [isLiked, setIsLiked] = useState(false);
+    const likesHandler = () => {
+        setLikes(isLiked ? likes - 1 : likes + 1)
+        setIsLiked(!isLiked)
+    }
   return (
     <div className='post'>
         <div className='postContainer'>
@@ -26,8 +31,13 @@ function Post({ post }) {
             </div>
             <div className='postInteract'>
                 <div className='likes'>
-                    <img className='likeButton' src='assets/like-button2.png' alt='like' />
-                    <span className='likeNumber'> {post.likes} </span>
+                    <img 
+                    className='likeButton' 
+                    src='assets/like-button2.png' 
+                    alt='like'
+                    onClick={likesHandler} 
+                    />
+                    <span className='likeNumber'> {likes} people like this</span>
                 </div>
             </div>
         </div>
