@@ -1,20 +1,20 @@
 import React from 'react'
-import { useState, useEffect } from "react";
-import Axios from 'axios';
+// import { useState, useEffect } from "react";
+// import Axios from 'axios';
 import Navbar from '../components/Navbar.js';
 import "../styles/home.css";
 import PostList from '../components/PostList.js';
 
 const Home = () => {
-  const[posts, setPosts] = useState([]);
+  // const[posts, setPosts] = useState([]);
 
   
-  useEffect(() => {
-    Axios.get("http://localhost:3001/posts/all").then((response) => {
-      setPosts(response.data.posts)
-      // console.log(response)
-    })
-  }, [])
+  // useEffect(() => {
+  //   Axios.get("http://localhost:3001/posts/all").then((response) => {
+  //     setPosts(response.data.posts)
+  //     // console.log(response)
+  //   })
+  // }, [])
 
 
   return (
@@ -22,14 +22,14 @@ const Home = () => {
     <Navbar />
     <PostList />
 
-      <div className='Posts'>
+      {/* <div className='Posts'>
           {posts.map((post) => {
             return <div>
               <h1>Username: {post.username}</h1>
               <h3>{post.body}</h3>
             </div>
           })}
-      </div>
+      </div> */}
     </div>
   )
 }

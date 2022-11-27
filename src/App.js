@@ -11,7 +11,8 @@ const App = () => {
   return (
   <>
   <Router>
-    <Home />
+    {/* <Home /> */}
+    <Profile />
  
     <Routes>
 

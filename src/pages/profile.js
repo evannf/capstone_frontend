@@ -1,33 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
+import PostList from "../components/PostList";
+import "../styles/profile.css"
 // import { useParams } from "react-router";
-import Axios from "axios";
+// import Axios from "axios";
 
 function Profile() {
-    const [user, setUser] = useState({});
-    // const id = useParams().id;
-
-    useEffect(() => {
-        Axios.get("http://localhost:3001/users/:id").then((response) => {
-          setUser(response.data)
-          console.log(response)
-        })
-      }, [user])
-
-
-    // useEffect(() => {
-    //     const getUser = async () => {
-    //         const res = await Axios.get(`/users/${id}`);
-    //         setUser(res.data)
-    //     } 
-    //     getUser() ;
-    // }, [id])
-
     return(
         <>
             <Navbar />
             <div className="profilePage">
-
+              <div className="profileCard">
+                <img className="profileImg" src="assets/beef-supreme.png" alt="profilePic" />
+                <span className="profileUsername"> Beef Supreme </span>
+                <span className="bio"> King of the Beef, founder of Social Meatia. All hail 🥩.  </span>
+              </div>
+              <div className="recentPosts">
+                <PostList />
+              </div>
             </div>
         </>
     )
