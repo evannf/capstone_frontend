@@ -9,7 +9,7 @@ import axios from "axios";
 function Profile() {
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const username = useParams().username;
+  const params = useParams();
 
   // useEffect(() => {
   //   const getUser = async () => {
@@ -22,11 +22,11 @@ function Profile() {
 
   useEffect(()=>{
     const getUsers = async () => {
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`/users?username=${params.username}`);
       setUser(res.data)
     }
     getUsers();
-  }, [username])
+  }, [params.username])
 
 
     return(
@@ -34,12 +34,12 @@ function Profile() {
             <Navbar />
             <div className="profilePage">
               <div className="profileCard">
-                <img className="profileImg" src={`${PF}beef-supreme.png`} alt="profilePic" />
-                <span className="profileUsername"> Username: {username} </span>
+                <img className="profileImg" src={ user.profilePic || PF + "patty.webp"} alt="profilePic" />
+                <span className="profileUsername"> Username: {user.username} </span>
                 <span className="bio"> Bio: {user.bio}  </span>
               </div>
               <div className="recentPosts">
-                <PostList username="BeefSupreme"/>
+                <PostList username={params.username}/>
               </div>
             </div>
         </>

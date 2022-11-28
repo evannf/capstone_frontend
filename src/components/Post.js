@@ -12,7 +12,7 @@ function Post({ post }) {
 
     useEffect(() => {
         const getUser = async () => {
-          const res = await axios.get(`http://localhost:3001/users/${post.username}`);
+          const res = await axios.get(`/users?username=${post.username}`);
           setUser(res.data);
           console.log(res.data);
         };
