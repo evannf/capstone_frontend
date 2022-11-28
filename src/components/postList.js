@@ -16,13 +16,6 @@ function PostList({ username }) {
     getPosts();
   }, [username])
 
-  //   useEffect(() => {
-  //   axios.get("http://localhost:3001/posts/all").then((response) => {
-  //     setPosts(response.data.posts)
-  //     // console.log(response)
-  //   })
-  // }, [])
-
   return (
     <>
     <PostCreator />
@@ -31,16 +24,6 @@ function PostList({ username }) {
         <Post key={post._id} post={post} />
       ))}
     </div>
-
-    {/* <div className='Posts'>
-          {posts.map((post) => {
-            return <div className="posts">
-              <h1>Username: {post.username}</h1>
-              <h3>{post.body}</h3>
-              <span>{post.img}</span>
-            </div>
-          })}
-      </div> */}
 
    
     </>

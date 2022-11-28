@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/post.css";
 import axios from 'axios';
+import { AuthContext } from '../context/AuthContext';
 
 function Post({ post }) {
     const [likes, setLikes] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [user, setUser] = useState({});
+    const { user:currentUser } = useContext(AuthContext);
     // console.log(post)
 
     useEffect(() => {
@@ -19,10 +21,18 @@ function Post({ post }) {
         getUser();
       }, [post.username])
 
+      useEffect(() => {
+        setIsLiked(post.likes.includes(currentUser.username));
+      }, [currentUser.username, post.likes]);
+
 
     const likesHandler = () => {
+        try{
+            axios.put(`/posts/${post._id}/like`, { username: currentUser.username });
+        } catch (err){}
         setLikes(isLiked ? likes - 1 : likes + 1)
         setIsLiked(!isLiked)
+        console.log(currentUser.username)
     };
 
   return (

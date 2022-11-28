@@ -18,7 +18,9 @@ const AuthReducer = (state, action) => {
                 isFetching: false,
                 error: action.response
             }
-    }
+            default:
+      return state;
+        }
 }
 
-export default AuthReducer
+export default AuthReducer;
