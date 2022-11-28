@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import "../styles/post.css";
 import axios from 'axios';
 
@@ -7,7 +8,7 @@ function Post({ post }) {
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [user, setUser] = useState({});
-    console.log(post)
+    // console.log(post)
 
     useEffect(() => {
         const getUser = async () => {
@@ -16,7 +17,7 @@ function Post({ post }) {
           console.log(res.data);
         };
         getUser();
-      }, [])
+      }, [post.username])
 
 
     const likesHandler = () => {
@@ -29,9 +30,11 @@ function Post({ post }) {
         <div className='postContainer'>
             <div className='postHeader'>
 
+                <Link to={`/profile/${user.username}`}>
                 <img className='profilePic'
                     src={user.profilePic || PF + 'patty.webp'}
                     alt='profilePic' />
+                </Link>
 
                 <span className='username'>
                     {post.username}
@@ -42,7 +45,9 @@ function Post({ post }) {
                 <span className='text'>
                     Post: {post.body}
                 </span>
-                <img className='postImg' src={ PF + post.pic } alt='postPic'/>
+
+                <img className='postImg' src={ post.img } alt='postPic'/>
+
             </div>
             <div className='postInteract'>
                 <div className='likes'>

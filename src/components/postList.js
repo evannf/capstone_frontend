@@ -4,7 +4,7 @@ import PostCreator from "./postCreator";
 import axios from "axios";
 import Post from "./Post";
 
-function PostList({post}) {
+function PostList({ username }) {
   const[posts, setPosts] = useState([]);
    
   useEffect(() => {
@@ -14,7 +14,7 @@ function PostList({post}) {
       // console.log(res.data.posts);
     };
     getPosts();
-  }, [])
+  }, [username])
 
   //   useEffect(() => {
   //   axios.get("http://localhost:3001/posts/all").then((response) => {
@@ -28,7 +28,7 @@ function PostList({post}) {
     <PostCreator />
     <div className="posts">
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        <Post key={post._id} post={post} />
       ))}
     </div>
 

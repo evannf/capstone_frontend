@@ -15,7 +15,8 @@ function Navbar() {
       </div>
         <div className='links'>
             <Link to='/'>Home</Link>
-            <Link to='/profile/:username'>Profile</Link>
+            {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
+            {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
             <Link to='/users/:username/edit'>Edit Profile</Link>
             <Link to='/register'>Logout</Link>
         </div>
