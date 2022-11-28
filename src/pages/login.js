@@ -12,7 +12,10 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginCall({username: username.current.value, password: password.current.value}, dispatch)
+    loginCall({
+      username: username.current.value, 
+      password: password.current.value}, 
+      dispatch)
   };
   console.log(user)
   

@@ -3,11 +3,13 @@ import { useRef } from 'react';
 import "../styles/register.css";
 import meat from "../images/beef-supreme.png";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 function Register() {
   const username = useRef();
   const password = useRef();
+  const nav = useNavigate();
   
   const handleSubmit = async (e)  => {
     e.preventDefault();
@@ -18,7 +20,8 @@ function Register() {
     console.log(username, password);
 
     try{
-      await axios.post("/users/register", newUser);
+      await axios.post("/register", newUser);
+      nav('/login')
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +32,7 @@ function Register() {
     <div className='body'>
     <div className='formContainer'>
 
-      <div>
+      <form>
       <div className='imageContainer'>
         <div className='image'>
           <img src={meat} alt='meat' className='meat' />
@@ -70,7 +73,7 @@ function Register() {
         </div>
         <br />
         Already a Member? <a href='/login'>Sign In Here!</a>
-      </div>
+      </form>
 
 
     </div>
