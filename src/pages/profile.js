@@ -6,12 +6,13 @@ import "../styles/profile.css"
 // import Axios from "axios";
 
 function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return(
         <>
             <Navbar />
             <div className="profilePage">
               <div className="profileCard">
-                <img className="profileImg" src="assets/beef-supreme.png" alt="profilePic" />
+                <img className="profileImg" src={`${PF}beef-supreme.png`} alt="profilePic" />
                 <span className="profileUsername"> Beef Supreme </span>
                 <span className="bio"> King of the Beef, founder of Social Meatia. All hail 🥩.  </span>
               </div>

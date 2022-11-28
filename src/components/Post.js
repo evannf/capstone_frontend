@@ -5,6 +5,8 @@ import { Users } from "../mockData.js"
 function Post({ post }) {
     const [likes, setLikes] = useState(post.likes);
     const [isLiked, setIsLiked] = useState(false);
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     const likesHandler = () => {
         setLikes(isLiked ? likes - 1 : likes + 1)
         setIsLiked(!isLiked)
@@ -27,13 +29,13 @@ function Post({ post }) {
                 <span className='text'>
                     {post.body}
                 </span>
-                <img className='postImg' src='/assets/beef-supreme.png' alt='postPic'/>
+                <img className='postImg' src={ PF + post.pic } alt='postPic'/>
             </div>
             <div className='postInteract'>
                 <div className='likes'>
                     <img 
                     className='likeButton' 
-                    src='assets/like-button2.png' 
+                    src={`${PF}like-button2.png` }
                     alt='like'
                     onClick={likesHandler} 
                     />
