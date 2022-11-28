@@ -1,19 +1,24 @@
 import React from 'react';
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "../styles/register.css";
-import meat from "../images/beef-supreme.png"
+import meat from "../images/beef-supreme.png";
+import { loginCall } from "../authCalls.js";
+import { AuthContext } from "../context/AuthContext.js";
 
 function Login() {
   const username = useRef();
   const password = useRef();
+  const {user, error, dispatch} = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username.current.value)
-  }
+    loginCall({username: username.current.value, password: password.current.value}, dispatch)
+  };
+  console.log(user)
   
   return (
     <div className='body'>
-    <div className='formContainer'>
+    <form className='formContainer'>
 
       <div>
       <div className='imageContainer'>
@@ -59,7 +64,7 @@ function Login() {
       </div>
 
 
-    </div>
+    </form>
     </div>
   )
 }
