@@ -60,7 +60,7 @@ function Login() {
           
         </div>
         <br />
-        Not a Member? <a href='/users/register'>Sign Up Here!</a>
+        Not a Member? <a href='/register'>Sign Up Here!</a>
       </div>
 
 
