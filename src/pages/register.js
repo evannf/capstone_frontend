@@ -69,7 +69,7 @@ function Register() {
           
         </div>
         <br />
-        Already a Member? <a href='/users/login'>Sign In Here!</a>
+        Already a Member? <a href='/login'>Sign In Here!</a>
       </div>
 
 

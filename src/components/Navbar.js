@@ -14,10 +14,10 @@ function Navbar() {
       Social Meatia
       </div>
         <div className='links'>
-            <Link to='/posts/all'>Home</Link>
-            <Link to='/users/:id'>Profile</Link>
-            <Link to='/users/:id/edit'>Edit Profile</Link>
-            <Link to='/users/register'>Logout</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/profile/:username'>Profile</Link>
+            <Link to='/users/:username/edit'>Edit Profile</Link>
+            <Link to='/register'>Logout</Link>
         </div>
 
     </div>
