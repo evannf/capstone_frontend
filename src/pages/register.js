@@ -51,7 +51,7 @@ function Register() {
               <div>
                 <label> Password: </label>
                   <input 
-                    type="text" 
+                    type="password" 
                     placeholder='password'
                     className='password'
                     ref={password}

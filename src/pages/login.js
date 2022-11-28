@@ -1,8 +1,15 @@
 import React from 'react';
+import { useRef } from "react";
 import "../styles/register.css";
 import meat from "../images/beef-supreme.png"
 
 function Login() {
+  const username = useRef();
+  const password = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(username.current.value)
+  }
   
   return (
     <div className='body'>
@@ -23,24 +30,24 @@ function Login() {
                     type="text"
                     placeholder='username' 
                     className='username'
-
+                    ref={username}
                   />
               </div>
 
               <div>
                 <label> Password: </label>
                   <input 
-                    type="text" 
+                    type="password" 
                     placeholder='password'
                     className='password'
-
+                    ref={password}
                   />
               </div>
 
             <button
               type='submit' 
               className='registerButton' 
-              // onClick={handleSubmit}
+              onClick={handleSubmit}
             >
             Log In
             
