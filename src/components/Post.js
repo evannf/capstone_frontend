@@ -16,7 +16,7 @@ function Post({ post }) {
         const getUser = async () => {
           const res = await axios.get(`/users?username=${post.username}`);
           setUser(res.data);
-          console.log(res.data);
+        //   console.log(res.data);
         };
         getUser();
       }, [post.username])
@@ -31,7 +31,7 @@ function Post({ post }) {
             axios.put(`/posts/${post._id}/like`, { username: currentUser.username });
         } catch (err){}
         setLikes(isLiked ? likes - 1 : likes + 1)
-        setIsLiked(!isLiked)
+        setIsLiked((prev) => !prev)
         console.log(currentUser.username)
     };
 

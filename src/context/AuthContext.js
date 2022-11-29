@@ -8,6 +8,7 @@ const INITIAL_STATE = {
     password: "$2b$10$I3/41QFd5BItiZFP8yqJsuoHIk8jGfrqv/uQPTCH72g604NtQQoMC",
     profilePic: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ac35cd3-1d7…",
     },
+
     isFetching: false,
     error: false,
 }
