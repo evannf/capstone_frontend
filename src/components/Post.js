@@ -69,6 +69,7 @@ function Post({ post }) {
                     />
                     <span className='likeNumber'> {post.likes.length} people like this</span>
                 </div>
+                <button className='deletePost'> Delete </button>
             </div>
         </div>
     </div>

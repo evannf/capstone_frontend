@@ -15,9 +15,20 @@ function PostCreator() {
       username: user.username,
       body: body.current.value
     }
-
+    if(img){
+      const data = new FormData();
+      const imgName = Date.now() + img.name;
+      data.append('img', img);
+      data.append('name', imgName);
+      newPost.img = imgName;
+      console.log(newPost);
+      try {
+        await axios.post('/upload', data);
+      } catch (err) {}
+    }
     try{
-      await axios.post("/posts", newPost)
+      await axios.post("/posts", newPost);
+      window.location.reload();
     } catch(err){
 
     }
@@ -30,7 +41,7 @@ function PostCreator() {
           className='postInput' 
           type="text"
           placeholder="What's on your think-meat?"
-          ref={body} required="true"
+          ref={body} required
          />
         <input 
           className='postImg' 

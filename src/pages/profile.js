@@ -11,15 +11,6 @@ function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const params = useParams();
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const res = await axios.get("http://localhost:3001/users?username=Beef-Supreme");
-  //     setUser(res.data);
-  //     console.log(res.data);
-  //   };
-  //   getUser();
-  // }, [])
-
   useEffect(()=>{
     const getUsers = async () => {
       const res = await axios.get(`/users?username=${params.username}`);
