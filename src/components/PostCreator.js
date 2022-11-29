@@ -44,7 +44,7 @@ function PostCreator() {
           ref={body} required
          />
         <input 
-          className='postImg' 
+          className='postImgInput' 
           placeholder='upload an image?'
           type="file"
           id="img"

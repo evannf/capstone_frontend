@@ -4,6 +4,17 @@
     flex-direction: column;
 }
 
+.postBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .postInput{
     width: 600px;
+}
+
+.postImg {
+    padding-top: 20px;
+    padding-bottom: 0px;
 }

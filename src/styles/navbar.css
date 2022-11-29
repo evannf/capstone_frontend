@@ -38,3 +38,8 @@ img{
     font-size: 25px;
   }
 
+.logout {
+  background: none;
+  font-size: 25px;
+  color: white;
+}

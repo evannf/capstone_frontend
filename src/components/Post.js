@@ -12,7 +12,7 @@ function Post({ post, handleDelete }) {
     const { user:currentUser } = useContext(AuthContext);
     // console.log(post)
 
-    useCallback(() => {
+    useEffect(() => {
         const getUser = async () => {
           const res = await axios.get(`/users?username=${post.username}`);
           setUser(res.data);

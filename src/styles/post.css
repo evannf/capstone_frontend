@@ -4,6 +4,7 @@
     margin: 30px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .postContainer{
@@ -23,8 +24,7 @@
 
 .postImg{
     margin: 20px;
-    max-width: 200px;
-    max-height: 200px;
+    height: 200px;
 }
 
 .username {
@@ -49,6 +49,7 @@
 .deleteButton {
     width: 70px;
     font-size: 15px;
+    margin-left: 20px;
 }
 
 .editButton {
