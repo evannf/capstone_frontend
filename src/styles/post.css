@@ -5,6 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-color: red;
+    border-style: ridge;
+    background-color: rgba(121, 14, 14, 0.328);
 }
 
 .postContainer{

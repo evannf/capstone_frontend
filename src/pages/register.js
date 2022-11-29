@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   const username = useRef();
   const password = useRef();
+  const bio = useRef();
+  const profilePic = useRef();
   const nav = useNavigate();
   
   const handleSubmit = async (e)  => {
@@ -16,8 +18,10 @@ function Register() {
     const newUser = { 
       username: username.current.value,
       password: password.current.value,
+      bio: bio.current.value,
+      // profilePic: profilePic.current.value
     };
-    console.log(username, password);
+    console.log(username, password, bio);
 
     try{
       await axios.post("/register", newUser);
@@ -60,6 +64,24 @@ function Register() {
                     ref={password}
                   />
               </div>
+              <div>
+                <label> Bio: </label>
+                  <input 
+                    type="text"
+                    placeholder='bio' 
+                    className='bio'
+                    ref={bio}
+                  />
+              </div>
+              {/* <div> */}
+                {/* <label> Profile Picture: </label>
+                  <input 
+                    type="text"
+                    placeholder='image address only' 
+                    className='profliePic'
+                    ref={profilePic}
+                  />
+              </div> */}
 
             <button
               type='submit' 

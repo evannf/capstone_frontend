@@ -54,7 +54,7 @@ function Post({ post, handleDelete }) {
             </div>
             <div className='postBody'>
                 <span className='text'>
-                    Post: {post.body}
+                   {post.body}
                 </span>
 
                 <img className='postImg' src={ post.img || PF + 'patty.webp'} alt='postPic'/>
