@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import "../styles/navbar.css";
+import { AuthContext } from "../context/AuthContext.js"
 
 
 function Navbar() {
   const navigate = useNavigate()
+  const { user } = useContext(AuthContext);
 
   const logout = () => {
     localStorage.clear();
-    window.location.reload(false)
+    navigate('/login')
+    
   } 
   return (
     <>
@@ -22,8 +25,8 @@ function Navbar() {
         <div className='links'>
             <Link to='/'>Home</Link>
             {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
-            {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
-            <Link to='/users/:username/edit'>Edit Profile</Link>
+            <Link to={`/profile/${user.username}`}>Profile</Link>
+            {/* <Link to='/users/:username/edit'>Edit Profile</Link> */}
             <button className='logout' onClick={logout}> Logout </button>
         </div>
 

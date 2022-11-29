@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/post.css";
 import axios from 'axios';
@@ -12,7 +12,7 @@ function Post({ post, handleDelete }) {
     const { user:currentUser } = useContext(AuthContext);
     // console.log(post)
 
-    useEffect(() => {
+    useCallback(() => {
         const getUser = async () => {
           const res = await axios.get(`/users?username=${post.username}`);
           setUser(res.data);
@@ -21,7 +21,7 @@ function Post({ post, handleDelete }) {
         getUser();
       }, [post.username])
 
-      useEffect(() => {
+      useCallback(() => {
         setIsLiked(post.likes.includes(currentUser.username));
       }, [currentUser.username, post.likes]);
 
@@ -32,7 +32,7 @@ function Post({ post, handleDelete }) {
         } catch (err){}
         setLikes(isLiked ? likes - 1 : likes + 1)
         setIsLiked((prev) => !prev)
-        console.log(currentUser.username)
+        console.log("liked by " + currentUser.username)
     };
 
   return (
