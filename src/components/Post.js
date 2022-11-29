@@ -32,6 +32,7 @@ function Post({ post, handleDelete }) {
         } catch (err){}
         setLikes(isLiked ? likes - 1 : likes + 1)
         setIsLiked((prev) => !prev)
+        window.location.reload()
         console.log("liked by " + currentUser.username)
     };
 

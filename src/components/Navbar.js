@@ -11,7 +11,7 @@ function Navbar() {
   const logout = () => {
     localStorage.clear();
     navigate('/login')
-    
+    window.location.reload()
   } 
   return (
     <>
