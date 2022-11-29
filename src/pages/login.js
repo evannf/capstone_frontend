@@ -8,7 +8,7 @@ import { AuthContext } from "../context/AuthContext.js";
 function Login() {
   const username = useRef();
   const password = useRef();
-  const {user, error, dispatch} = useContext(AuthContext);
+  const {user, dispatch} = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();

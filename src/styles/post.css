@@ -40,3 +40,18 @@
 .likeNumber{
     font-size: 12;
 }
+
+.postInteract{
+    display: flex;
+    flex-direction: row;
+}
+
+.deleteButton {
+    width: 70px;
+    font-size: 15px;
+}
+
+.editButton {
+    width: 70px;
+    font-size: 15px;
+}

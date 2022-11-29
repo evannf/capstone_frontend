@@ -4,7 +4,7 @@ import "../styles/post.css";
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 
-function Post({ post }) {
+function Post({ post, handleDelete, handleEdit }) {
     const [likes, setLikes] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -56,7 +56,7 @@ function Post({ post }) {
                     Post: {post.body}
                 </span>
 
-                <img className='postImg' src={ post.img } alt='postPic'/>
+                <img className='postImg' src={ post.img || PF + 'patty.webp'} alt='postPic'/>
 
             </div>
             <div className='postInteract'>
@@ -69,7 +69,8 @@ function Post({ post }) {
                     />
                     <span className='likeNumber'> {post.likes.length} people like this</span>
                 </div>
-                <button className='deletePost'> Delete </button>
+                <button className="editButton" onClick={() => handleEdit(post._id)}> Edit </button>
+                <button className="deleteButton" onClick={() => handleDelete(post._id)}> Delete </button>
             </div>
         </div>
     </div>
