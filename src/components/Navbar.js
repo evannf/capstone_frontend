@@ -1,9 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "../styles/navbar.css";
 
 
 function Navbar() {
+  const navigate = useNavigate()
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.reload(false)
+  } 
   return (
     <>
     <div className='navbar'> 
@@ -18,7 +24,7 @@ function Navbar() {
             {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
             {/* <Link to={`/profile/${user.username}`}>Profile</Link> */}
             <Link to='/users/:username/edit'>Edit Profile</Link>
-            <Link to='/register'>Logout</Link>
+            <button className='logout' onClick={logout}> Logout </button>
         </div>
 
     </div>

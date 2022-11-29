@@ -4,7 +4,7 @@ import "../styles/post.css";
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 
-function Post({ post, handleDelete, handleEdit }) {
+function Post({ post, handleDelete }) {
     const [likes, setLikes] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -69,7 +69,7 @@ function Post({ post, handleDelete, handleEdit }) {
                     />
                     <span className='likeNumber'> {post.likes.length} people like this</span>
                 </div>
-                <button className="editButton" onClick={() => handleEdit(post._id)}> Edit </button>
+                {/* <button className="editButton" onClick={() => handleEdit(post._id)}> Edit </button> */}
                 <button className="deleteButton" onClick={() => handleDelete(post._id)}> Delete </button>
             </div>
         </div>

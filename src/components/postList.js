@@ -21,10 +21,30 @@ function PostList({ username }) {
     })
   }
 
-  const handleEdit = (id) => {
-    
-  }
+  const handleEdit = (id, e) => {
+    e.preventDefault()
+    const body = posts.body
+    fetch(baseURL + '/posts/' + id, {
+        method: 'PUT',
+        body: JSON.stringify({
+          body: e.target.value
+        }),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+    })
+    .then(res => {
+        if (res.ok) {
+            return res.json()
+        }
+    })
+    .then(resJson => {
+      posts.body = e.target.value
+    })
+    .catch(err => (console.log(err)))
+}
    
+
   useEffect(() => {
     const getPosts = async () => {
       const res = await axios.get("http://localhost:3001/posts/all");
@@ -39,7 +59,7 @@ function PostList({ username }) {
     <PostCreator />
     <div className="posts">
       {posts.map((post) => (
-        <Post key={post._id} post={post} handleDelete={handleDelete} />
+        <Post key={post._id} post={post} handleDelete={handleDelete} handleEdit={handleEdit}/>
       ))}
     </div>
 
