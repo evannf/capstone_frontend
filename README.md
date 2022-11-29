@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Social Meatia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Social Meatia is a mock social media app, meant to poke fun at the world of online obsession. It also serves as a proof-of-concept for various real-world uses of Node.js, React, and Express. Users can register an account, login, and start sharing their meat-based opinions immediately. Come join the most ridiculous social media app ever created, just don't bring any vegetables.
 
-## Available Scripts
+This project was built with MongoDB, Mongoose, Express, Express Router, React, React Router, Node.js, and vanilla CSS styling.
 
-In the project directory, you can run:
+Dependencies needed to run the app: 
+  - axios
+  - bcrypt
+  - cors
+  - dotenv
+  - express
+  - method-override
+  - mongoose
+  - multer
+  - nodemon
+  - path
+  - react
+  - react-dom
+  - react-router-dom
+  
+User Stories:
+  - As new user I want to be able to register an account and sign in
+  - As a returing user I want to be able to log back into the same account
+  - As a user I want to be able to share my thoughts with other users in the form of posts
+  - As a user I want to be able to like or unlike posts from any user
+  - As a user I want to be able to delete posts I don't like
+  
+Wireframes: 
+![IMG_1636](https://user-images.githubusercontent.com/105689542/204658775-c2a3838a-b47d-4ac7-b6c1-15ad21254adc.jpg)
+![4bc79af9-37b3-4614-844f-bef663008cb6](https://user-images.githubusercontent.com/105689542/204659479-4cdfe7b0-65fa-4316-98b1-a2a7cadbde0b.jpeg)
+![IMG_1721](https://user-images.githubusercontent.com/105689542/204659671-98daffb8-3e69-4432-ad68-cd8efb5a2691.jpg)
 
-### `npm start`
+Unsolved Problems: Unable to edit profile information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Future Features: Edit profile, edit posts, comments on posts, add friends
