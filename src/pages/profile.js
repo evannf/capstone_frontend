@@ -25,7 +25,7 @@ function Profile() {
             <Navbar />
             <div className="profilePage">
               <div className="profileCard">
-                <img className="profileImg" src={ user.profilePic || PF + "patty.webp"} alt="profilePic" />
+                <img className="profileImg" src={ user.profilePic || PF + "steak.webp"} alt="profilePic" />
                 <span className="profileUsername"> Username: {user.username} </span>
                 <span className="bio"> Bio: {user.bio}  </span>
               </div>

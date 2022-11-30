@@ -10,7 +10,7 @@ function Register() {
   const username = useRef();
   const password = useRef();
   const bio = useRef();
-  const profilePic = useRef();
+  // const profilePic = useRef();
   const nav = useNavigate();
   
   const handleSubmit = async (e)  => {
