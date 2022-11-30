@@ -43,7 +43,7 @@ function Post({ post, handleDelete }) {
 
                 <Link to={`/profile/${user.username}`}>
                 <img className='profilePic'
-                    src={user.profilePic || PF + 'patty.webp'}
+                    src={user.profilePic || PF + 'steak.webp'}
                     alt='profilePic' />
                 </Link>
 
