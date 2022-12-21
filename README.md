@@ -1,3 +1,5 @@
+backend repo: https://github.com/evannf/capstone_backend
+
 # Social Meatia
 
 Social Meatia is a mock social media app, meant to poke fun at the world of online obsession. It also serves as a proof-of-concept for various real-world uses of Node.js, React, and Express. Users can register an account, login, and start sharing their meat-based opinions immediately. Come join the most ridiculous social media app ever created, just don't bring any vegetables.
